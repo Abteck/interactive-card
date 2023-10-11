@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body class="font-space-Grotesk text-lg">
+    <header>
+      <h1 class="sr-only">Interactive Card Details Form</h1>
+    </header>
+    <main
+      class="min-h-screen w-full flex flex-col gap-24 md:flex-row md:gap-16 md:justify-between"
+    >
+      <section class="w-full md:w-4/12 lg:max-w-lg transition-all">
+        <h2 class="sr-only">Card images front and back</h2>
+        <div class="w-full relative">
+          <!-- background image for mobile -->
+          <img
+            src="./images/bg-main-mobile.png"
+            alt="mobile background"
+            class="md:hidden flex w-full h-80"
+          />
+          <!-- background image for desktop -->
+          <img
+            src="./images/bg-main-desktop.png"
+            alt="desktop background"
+            class="hidden md:flex md:min-h-screen"
+          />
+
+          <!-- BACK OF CARD -->
+          <div
+            class="w-10/12 absolute top-1/4 right-4 md:top-[59%] md:left-[30%] max-w-sm md:max-w-md md:w-[17rem] lg:w-80 lg:left-1/2 z-20"
+          >
+            <img src="./images/bg-card-back.png" alt="card-back" />
+            <span
+              id="cvcOut"
+              class="absolute top-[44%] right-8 tracking-widest text-xs sm:text-sm md:text-sm text-White md:right-6 lg:right-7 lg:text-sm"
+              >000</span
+            >
+          </div>
+
+          <!-- FRONT OF CARD -->
+          <div
+            class="w-10/12 absolute top-[60%] left-4 md:top-1/3 md:left-3 max-w-sm md:w-[17rem] lg:w-80 lg:top-[18%] lg:left-[30%] z-20"
+          >
+            <img src="./images/bg-card-front.png" alt="card-front" />
+            <img
+              src="./images/card-logo.svg"
+              alt="card-logo"
+              class="absolute top-5 left-5 w-12 sm:w-16 md:w-12"
+            />
+            <small
+              id="numberOut"
+              class="absolute top-1/2 left-5 tracking-widest text-lg sm:text-2xl md:text-base text-White lg:text-lg"
+              >0000 0000 0000 0000</small
+            >
+            <span
+              id="nameOut"
+              class="absolute top-3/4 left-5 tracking-widest text-xs text-White"
+              >JANE APPLESEED</span
+            >
+            <span
+              id="dateOut"
+              class="absolute top-3/4 right-5 tracking-widest text-White text-xs"
+              >00/00</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="px-4 relative md:h-screen md:flex md:justify-center md:items-center md:w-full transition-all"
+      >
+        <form
+          id="form"
+          action="#"
+          class="w-full flex gap-7 flex-col p-3 md:p-5 md:max-w-sm lg:max-w-md"
+        >
+          <!-- card holder name -->
+          <div id="holder-name" class="flex flex-col gap-2">
+            <label
+              for="holderName"
+              class="text-sm text-Very-dark-violet tracking-widest font-medium"
+              >CARD HOLDER NAME</label
+            >
+            <input
+              class="w-full px-2 py-3 outline-none border focus:border border-Dark-grayish-violet rounded-md focus:border-input-active tracking-wide"
+              type="text"
+              name="holderName"
+              id="holderName"
+              placeholder="e.g Jane Appleseed"
+            />
+            <span class="text-Red text-xs"></span>
+          </div>
+
+          <!-- card number -->
+          <div id="cardNumb" class="flex flex-col gap-2">
+            <label
+              for="cardNumber"
+              class="text-sm text-Very-dark-violet font-medium tracking-widest"
+              >CARD NUMBER</label
+            >
+            <input
+              id="cardNumber"
+              type="text"
+              name="cardNumber"
+              maxlength="19"
+              placeholder="e.g 1234 5678 9123 0000"
+              class="w-full px-2 py-3 outline-none border focus:border border-Dark-grayish-violet rounded-md focus:border-input-active tracking-wide"
+            />
+            <span class="text-Red text-xs"></span>
+          </div>
+
+          <!-- expiry date of card (MM/YY) and CVC -->
+          <div class="flex w-full gap-3">
+            <div class="flex flex-col gap-2">
+              <label
+                for="month"
+                class="text-sm text-Very-dark-violet font-medium tracking-widest"
+                >EXP. DATE</label
+              >
+              <input
+                id="month"
+                type="text"
+                name="month"
+                maxlength="2"
+                placeholder="MM"
+                class="w-20 px-2 py-3 outline-none border focus:border border-Dark-grayish-violet rounded-md focus:border-input-active"
+              />
+              <span class="text-Red text-xs"></span>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label
+                for="year"
+                class="text-sm text-Very-dark-violet font-medium tracking-widest"
+                >[MM / YY]</label
+              >
+              <input
+                id="year"
+                type="text"
+                name="year"
+                maxlength="2"
+                placeholder="YY"
+                class="w-20 px-2 py-3 outline-none border focus:border border-Dark-grayish-violet rounded-md focus:border-input-active"
+              />
+              <span class="text-Red text-xs"></span>
+            </div>
+            <div class="flex flex-col gap-2 flex-1">
+              <label
+                for="cvc"
+                class="text-sm text-Very-dark-violet font-medium tracking-widest"
+                >CVC</label
+              >
+              <input
+                id="cvc"
+                type="text"
+                name="cvc"
+                maxlength="3"
+                placeholder="eg 123"
+                class="w-full px-2 py-3 outline-none border focus:border border-Dark-grayish-violet rounded-md focus:border-input-active"
+              />
+              <span class="text-Red text-xs"></span>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="px-2 py-3 bg-Very-dark-violet text-White rounded-md"
+          >
+            Confirm
+          </button>
+        </form>
+
+        <!-- success screen -->
+        <div
+          id="success-screen"
+          class="hidden absolute top-0 bottom-0 left-0 w-full flex-col justify-center items-center gap-3 bg-White text-Very-dark-violet p-3 transition-all origin-top delay-500 z-10"
+        >
+          <span
+            ><img src="./images/icon-complete.svg" alt="complete icon"
+          /></span>
+          <span class="text-2xl tracking-widest font-medium mt-8"
+            >THANK YOU!</span
+          >
+          <span class="text-Dark-grayish-violet text-sm sm:text-lg"
+            >We've added your card details</span
+          >
+          <button
+            id="continue"
+            type="submit"
+            class="w-full px-2 py-3 bg-Very-dark-violet text-White rounded-md mt-7 md:max-w-xs"
+          >
+            Continue
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
