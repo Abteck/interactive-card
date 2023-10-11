@@ -29,9 +29,9 @@ Users should be able to:
 
 ### Screenshot
 
-!<img src="./public/images/interactive-completed.png" alt="desktop-completed"/>
-!<img src="./public/images/interactive-desktop.png" alt="desktop-view"/>
-!<img src="./public/images/interactive-mobile-view.png" alt="mobile-view"/>
+!<img src="./public/images/interactive-completed.png" alt="desktop-completed">
+!<img src="./public/images/interactive-desktop.png" alt="desktop-view">
+!<img src="./public/images/interactive-mobile-view.png" alt="mobile-view">
 
 ### Links
 
