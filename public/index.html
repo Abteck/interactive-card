@@ -21,7 +21,7 @@
   </head>
   <body class="min-h-screen font-space-Grotesk text-lg">
     <header>
-      <h1 class="sr-only">Interactive Card Details Form</h1>
+      <h1 class="sr-only">Interactive Form</h1>
     </header>
     <main
       class="min-h-screen w-full flex items-center flex-col gap-16 sm:gap-28 md:flex-row overflow-hidden"
@@ -34,7 +34,7 @@
 
         <div
           id="cards"
-          class="flex flex-col-reverse gap-8 w-full relative items-center -right-2 top-9 sm:top-14 p-2 md:flex-col md:left-0 md:justify-center md:translate-x-[42%] lg:translate-x-1/2"
+          class="flex flex-col-reverse gap-8 w-full relative items-center -right-2 top-9 sm:top-14 p-2 md:flex-col md:left-0 md:justify-center md:translate-x-[42%] lg:translate-x-1/2 z-50"
         >
           <!-- front of card -->
           <div
@@ -180,30 +180,29 @@
           >
             Confirm
           </button>
-
-          <!-- success screen -->
-          <div
-            id="success-screen"
-            class="hidden absolute top-0 bottom-0 left-0 flex-col justify-center items-center gap-3 bg-White text-Very-dark-violet p-3 origin-top delay-500 right-0 md:max-w-sm lg:max-w-md transition-all z-10"
-          >
-            <span
-              ><img src="./images/icon-complete.svg" alt="complete icon"
-            /></span>
-            <span class="text-2xl tracking-widest font-medium mt-8"
-              >THANK YOU!</span
-            >
-            <span class="text-Dark-grayish-violet text-sm sm:text-lg"
-              >We've added your card details</span
-            >
-            <button
-              id="continue"
-              type="submit"
-              class="w-full px-2 py-3 bg-Very-dark-violet text-White rounded-md mt-7 md:max-w-xs"
-            >
-              Continue
-            </button>
-          </div>
         </form>
+        <!-- success screen -->
+        <div
+          id="success-screen"
+          class="hidden absolute top-0 bottom-0 left-0 right-0 flex-col justify-center items-center gap-3 bg-White text-Very-dark-violet p-3 origin-top delay-500 transition-all z-10"
+        >
+          <span
+            ><img src="./images/icon-complete.svg" alt="complete icon"
+          /></span>
+          <span class="text-2xl tracking-widest font-medium mt-8"
+            >THANK YOU!</span
+          >
+          <span class="text-Dark-grayish-violet text-sm sm:text-lg"
+            >We've added your card details</span
+          >
+          <button
+            id="continue"
+            type="submit"
+            class="w-full px-2 py-3 bg-Very-dark-violet text-White rounded-md mt-7 md:max-w-xs"
+          >
+            Continue
+          </button>
+        </div>
       </section>
     </main>
   </body>
